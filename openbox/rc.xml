@@ -234,7 +234,7 @@
   </keybind>
 
   <!-- Keybindings for windows -->
-  <keybind key="W-F4">
+  <keybind key="W-Q">
     <action name="Close"/>
   </keybind>
   <keybind key="W-Escape">
@@ -247,7 +247,7 @@
   </keybind>
 
   <!-- Keybindings for window switching -->
-  <keybind key="W-Tab">
+  <keybind key="W-Z">
     <action name="NextWindow">
       <finalactions>
         <action name="Focus"/>
@@ -256,7 +256,7 @@
       </finalactions>
     </action>
   </keybind>
-  <keybind key="W-S-Tab">
+  <keybind key="W-X">
     <action name="PreviousWindow">
       <finalactions>
         <action name="Focus"/>
