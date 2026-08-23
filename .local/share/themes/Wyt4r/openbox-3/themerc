@@ -5,11 +5,6 @@
 # Fonts
 # these are really halos, but who cares?
 
-*.font: shadow=n
-window.active.label.text.font:shadow=y:shadowtint=30:shadowoffset=1
-window.inactive.label.text.font:shadow=y:shadowtint=00:shadowoffset=0
-menu.items.font:shadow=y:shadowtint=0:shadowoffset=1
-
 !# general stuff
 
 border.width: 2
@@ -43,23 +38,23 @@ menu.border.color: #000000
 menu.border.width: 2
 
 menu.title.bg: Flat Solid
-menu.title.bg.color: #ffffff
-menu.title.text.color: #000000
+menu.title.bg.color: #000000
+menu.title.text.color: #ffffff
 
 menu.items.bg: Flat Solid
-menu.items.bg.color: #000000
-menu.items.text.color: #ffffff
-menu.items.disabled.text.color: #ffffff
+menu.items.bg.color: #ffffff
+menu.items.text.color: #000000
+menu.items.disabled.text.color: #000000
 
 menu.items.active.bg: Flat Solid
-menu.items.active.bg.color: #ffffff
-menu.items.active.bg.border.color: #000000
-menu.items.active.text.color: #000000
+menu.items.active.bg.color: #000000
+menu.items.active.bg.border.color: #ffffff
+menu.items.active.text.color: #ffffff
 
-menu.separator.width: 0
+menu.separator.width: 2
 menu.separator.padding.width: 0
-menu.separator.padding.height: 4
-menu.separator.color: #ffffff
+menu.separator.padding.height: 0
+menu.separator.color: #000000
 
 !# set handles here and only the once?
 
@@ -73,49 +68,44 @@ window.*.grip.bg.color: #eaebec
 
 window.*.border.color: #000000
 
-window.active.title.separator.color: #4e76a8
+window.active.title.bg: Flat Solid
+window.active.title.bg.color: #ffffff
+window.active.title.separator.color: #ffffff
 
-*.title.bg: Raised Gradient splitvertical
-*.title.bg.color: #8CB0DC
-*.title.bg.color.splitTo: #99BAE3
-*.title.bg.colorTo: #86ABD9
-*.title.bg.colorTo.splitTo: #7AA1D1
+*.title.bg: Flat Solid
+*.title.bg.color: #ffffff
 
-window.active.label.bg: Parentrelative
-window.active.label.text.color: #ffffff
+window.active.label.bg: Flat Solid
+window.active.label.bg.color: #ffffff
+window.active.label.text.color: #000000
 
 window.active.button.*.bg: Flat Solid Border
 window.active.button.*.bg.color: #ffffff
 window.active.button.*.bg.border.color: #ffffff
-window.active.button.*.image.color: #959595
-window.active.button.hover.bg.color: #959595
-window.active.button.hover.bg.border.color: #959595
+window.active.button.*.image.color: #ffffff
+window.active.button.hover.bg.color: #ffffff
+window.active.button.hover.bg.border.color: #ffffff
 window.active.button.hover.image.color: #ffffff
 window.active.button.pressed.bg: Flat Solid Border
-window.active.button.pressed.bg.color: #959595
-window.active.button.hover.bg.border.color: #959595
+window.active.button.pressed.bg.color: #ffffff
+window.active.button.hover.bg.border.color: #ffffff
 
 !# inactive
 
-!#window.inactive.border.color: #7e8285
-window.inactive.title.separator.color: #96999d
+!#window.inactive.border.color: #ffffff
+window.inactive.title.separator.color: #ffffff
 
-window.inactive.title.bg: Raised Gradient splitvertical
-window.inactive.title.bg.color: #E3E2E0
-window.inactive.title.bg.color.splitTo: #EBEAE9
-window.inactive.title.bg.colorTo: #DEDCDA
-window.inactive.title.bg.colorTo.splitTo: #D5D3D1
+window.inactive.title.bg: Flat Solid
+window.inactive.title.bg.color: #ffffff
 
-window.inactive.label.bg: Parentrelative
-window.inactive.label.text.color: #70747d
+window.inactive.label.bg: Flat Solid
+window.inactive.label.bg.color: #ffffff
+window.inactive.label.text.color: #000000
 
-window.inactive.button.*.bg: Flat Gradient splitVertical Border
+window.inactive.button.*.bg: Flat Solid Border
 window.inactive.button.*.bg.color: #ffffff
-window.inactive.button.*.bg.color.splitto: #ffffff
-window.inactive.button.*.bg.colorTo: #F9F8F8
-window.inactive.button.*.bg.colorTo.splitto: #E9E7E6
-window.inactive.button.*.bg.border.color: #928F8B
-window.inactive.button.*.image.color: #6D6C6C
+window.inactive.button.*.bg.border.color: #ffffff
+window.inactive.button.*.image.color: #ffffff
 
 !# osd (pop ups and what not, dock?)
 
@@ -133,4 +123,4 @@ osd.inactive.label.text.color: #ffffff
 osd.hilight.bg: Flat Solid
 osd.hilight.bg.color: #ffffff
 osd.unhilight.bg: Flat Solid
-osd.unhilight.bg.color: #808080
+osd.unhilight.bg.color: #000000

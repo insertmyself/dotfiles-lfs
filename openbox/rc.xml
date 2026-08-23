@@ -50,7 +50,7 @@
 
 <theme>
   <name>Wyt4r</name>
-  <titleLayout>NLIMC</titleLayout>
+  <titleLayout>L</titleLayout>
   <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -312,13 +312,14 @@
   </keybind>
 
   <!-- Keybindings for running applications -->
-  <keybind key="W-e">
+  <keybind key="W-Return">
     <action name="Execute">
-      <startupnotify>
-        <enabled>true</enabled>
-        <name>Konqueror</name>
-      </startupnotify>
-      <command>kfmclient openProfile filemanagement</command>
+      <command>kitty</command>
+    </action>
+  </keybind>
+  <keybind key="W-B">
+    <action name="Execute">
+      <command>firefox</command>
     </action>
   </keybind>
 </keyboard>
@@ -657,10 +658,11 @@
 </menu>
 
 <applications>
-    <application name="*">
+    <application class="*">
         <decor>no</decor>
     </application>
 </applications>
+
 <applications>
     <application title="Openbox">
         <border>yes</border>
