@@ -16,5 +16,5 @@
 #
 #xfce-mcs-manager &
 picom --config $HOME/.config/picom/picom.conf -b
-feh --no-fehbg --bg-scale $HOME/Pictures/Wallpapers/Night.png
+feh --no-fehbg --bg-scale $HOME/Pictures/Wallpapers/Miku.png
 $HOME/.local/share/bin/pipewire-launcher.sh
