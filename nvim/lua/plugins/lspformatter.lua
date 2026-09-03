@@ -104,15 +104,11 @@ return {
       vim.lsp.enable("jsonls")
       vim.lsp.enable("pylsp")
       vim.lsp.enable("rust_analyzer")
-      vim.lsp.config["qmlls6"] = {
-        cmd = { "qmlls6" },
+      vim.lsp.config["qmlls"] = {
+        cmd = { "qmlls" },
         filetypes = { "qml" },
       }
-      vim.lsp.config["ruby_lsp"] = {
-        cmd = { "/home/wetar/.local/share/gem/ruby/3.4.0/bin/ruby-lsp" },
-      }
-      vim.lsp.enable("ruby_lsp")
-      vim.lsp.enable("qmlls6")
+      vim.lsp.enable("qmlls")
       vim.lsp.enable("gopls")
       vim.lsp.enable("tailwindcss")
       vim.keymap.set(

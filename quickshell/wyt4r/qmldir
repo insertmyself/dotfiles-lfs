@@ -1,0 +1,4 @@
+singleton Volume 1.0 Volume.qml
+singleton Workspaces 1.0 Workspaces.qml
+singleton Brightness 1.0 Brightness.qml
+Bar 1.0 Bar.qml

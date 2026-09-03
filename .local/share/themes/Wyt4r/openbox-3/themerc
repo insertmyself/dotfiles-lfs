@@ -8,9 +8,9 @@
 !# general stuff
 
 border.width: 2
-padding.width: 2
-padding.height: 2
-window.handle.width: 2
+padding.width: 0
+padding.height: 0
+window.handle.width: 0
 window.client.padding.width: 0
 menu.overlap: 2
 *.justify: center
@@ -34,7 +34,7 @@ window.*.handle.bg.shadow:    30
 
 !# Menu settings
 
-menu.border.color: #000000
+menu.border.color: #ffffff
 menu.border.width: 2
 
 menu.title.bg: Flat Solid
@@ -66,7 +66,7 @@ window.*.grip.bg.color: #eaebec
 
 !# Active
 
-window.*.border.color: #000000
+window.*.border.color: #ffffff
 
 window.active.title.bg: Flat Solid
 window.active.title.bg.color: #ffffff
@@ -109,18 +109,18 @@ window.inactive.button.*.image.color: #ffffff
 
 !# osd (pop ups and what not, dock?)
 
-osd.border.width: 2
-osd.border.color: #000000
-osd.bg: Flat Solid
+osd.bg: Flat Solid Border
 osd.bg.color: #ffffff
-osd.bg.border.color: #000000
+osd.bg.border.width: 2
+osd.bg.border.color: #ffffff
 osd.active.label.bg: Flat Solid
 osd.active.label.bg.color: #ffffff
-osd.active.label.bg.border.color: #000000
 osd.active.label.text.color: #000000
 osd.inactive.label.bg: Flat Solid
 osd.inactive.label.text.color: #ffffff
-osd.hilight.bg: Flat Solid
+osd.hilight.bg: Flat Solid Border
 osd.hilight.bg.color: #ffffff
-osd.unhilight.bg: Flat Solid
+osd.hilight.bg.border.color: #000000
+osd.unhilight.bg: Flat Solid Border
 osd.unhilight.bg.color: #000000
+osd.unhilight.bg.border.color: #ffffff

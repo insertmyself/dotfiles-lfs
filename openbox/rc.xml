@@ -217,18 +217,6 @@
   <keybind key="S-W-Down">
     <action name="SendToDesktop"><to>down</to><wrap>no</wrap></action>
   </keybind>
-  <keybind key="W-F1">
-    <action name="GoToDesktop"><to>1</to></action>
-  </keybind>
-  <keybind key="W-F2">
-    <action name="GoToDesktop"><to>2</to></action>
-  </keybind>
-  <keybind key="W-F3">
-    <action name="GoToDesktop"><to>3</to></action>
-  </keybind>
-  <keybind key="W-F4">
-    <action name="GoToDesktop"><to>4</to></action>
-  </keybind>
   <keybind key="W-d">
     <action name="ToggleShowDesktop"/>
   </keybind>
@@ -277,15 +265,15 @@
   </keybind>
 
 
-  <!-- Keybind for screenshotting -->
+  <!-- Keybindings for screenshot -->
   <keybind key="Print">
     <action name="Execute">
-        <command>scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png</command>
+        <command>scrot -q 100 ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png</command>
     </action>
   </keybind>
   <keybind key="W-Print">
     <action name="Execute">
-        <command>scrot -s ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png</command>
+        <command>scrot -s -q 100 ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png</command>
     </action>
   </keybind>
 
@@ -320,6 +308,43 @@
   <keybind key="W-B">
     <action name="Execute">
       <command>firefox</command>
+    </action>
+  </keybind>
+  <keybind key="W-R">
+    <action name="Reconfigure" />
+  </keybind>
+
+  <!-- Keybind for logging out -->
+  <keybind key="W-E">
+    <action name="Exit">
+      <prompt>no</prompt>
+    </action>
+  </keybind>
+
+  <!-- Keybindings for volume and stuff -->
+  <keybind key="XF86AudioRaiseVolume">
+    <action name="Execute">
+      <command>wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 10%+</command>
+    </action>
+  </keybind>
+  <keybind key="XF86AudioLowerVolume">
+    <action name="Execute">
+      <command>wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 10%-</command>
+    </action>
+  </keybind>
+  <keybind key="XF86AudioMute">
+    <action name="Execute">
+      <command>wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle</command>
+    </action>
+  </keybind>
+  <keybind key="XF86MonBrightnessUp">
+    <action name="Execute">
+      <command>brightnessctl set 10%+</command>
+    </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+    <action name="Execute">
+      <command>brightnessctl set 10%-</command>
     </action>
   </keybind>
 </keyboard>
@@ -658,13 +683,7 @@
 </menu>
 
 <applications>
-    <application class="*">
-        <decor>no</decor>
-    </application>
-</applications>
-
-<applications>
-    <application title="Openbox">
+    <application title="openbox">
         <border>yes</border>
     </application>
 </applications>
@@ -676,13 +695,13 @@
   # you may use one or more of the name/class/role/title/type rules to specify
   # windows to match
 
-  <application name="the window's _OB_APP_NAME property (see obxprop)"
-              class="the window's _OB_APP_CLASS property (see obxprop)"
-          groupname="the window's _OB_APP_GROUP_NAME property (see obxprop)"
-         groupclass="the window's _OB_APP_GROUP_CLASS property (see obxprop)"
-               role="the window's _OB_APP_ROLE property (see obxprop)"
-              title="the window's _OB_APP_TITLE property (see obxprop)"
-               type="the window's _OB_APP_TYPE property (see obxprob)..
+  <application name="the window's _ob_app_name property (see obxprop)"
+              class="the window's _ob_app_class property (see obxprop)"
+          groupname="the window's _ob_app_group_name property (see obxprop)"
+         groupclass="the window's _ob_app_group_class property (see obxprop)"
+               role="the window's _ob_app_role property (see obxprop)"
+              title="the window's _ob_app_title property (see obxprop)"
+               type="the window's _ob_app_type property (see obxprob)..
                       (if unspecified, then it is 'dialog' for child windows)">
   # you may set only one of name/class/role/title/type, or you may use more
   # than one together to restrict your matches.
