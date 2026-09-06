@@ -3,4 +3,8 @@ pragma Singleton
 import Quickshell
 import Quickshell.Services.UPower
 
-Singleton {}
+Singleton {
+    id: root
+    property var battery: UPower.displayDevice
+    property var isCharging: !UPower.onBattery
+}

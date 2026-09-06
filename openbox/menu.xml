@@ -42,14 +42,18 @@
   </item>
 </menu>
 
-<menu id="system-menu" label="System">
-  <item label="Openbox Configuration Manager">
+<menu id="apps-coding-menu" label="Coding">
+  <item label="Arduino IDE">
     <action name="Execute">
-      <command>obconf</command>
-      <startupnotify><enabled>yes</enabled></startupnotify>
+      <command>arduino-ide</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
     </action>
   </item>
-  <separator />
+</menu>
+
+<menu id="system-menu" label="System">
   <item label="Reconfigure Openbox">
     <action name="Reconfigure" />
   </item>
@@ -57,6 +61,7 @@
 
 <menu id="root-menu" label="Openbox 3">
   <separator label="Applications" />
+  <menu id="apps-coding-menu" />
   <menu id="apps-graphics-menu"/>
   <menu id="apps-net-menu"/>
   <menu id="apps-term-menu"/>

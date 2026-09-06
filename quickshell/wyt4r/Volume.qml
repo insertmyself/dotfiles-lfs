@@ -10,6 +10,6 @@ Singleton {
     property bool muted: sink?.audio?.muted ?? false
 
     PwObjectTracker {
-        objects: [root.sink]
+        objects: root.sink ? [root.sink] : []
     }
 }

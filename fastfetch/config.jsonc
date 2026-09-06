@@ -4,8 +4,8 @@
   "logo": {
     "source": "$HOME/.config/fastfetch/maid.png",
     "type": "kitty-direct",
-    "height": 14,
-    "width": 32,
+    "height": 16,
+    "width": 38,
     "padding": {
       "top": 1,
       "left": 2,
@@ -37,6 +37,12 @@
       "type": "gpu",
       "key": "   ",
       "format": "{vendor} {name}",
+      "keyColor": "white"
+    },
+    {
+      "type": "initsystem",
+      "key": "  󰈏 ",
+      "format": "Sysvinit 3.14 on {exe}",
       "keyColor": "white"
     },
     {

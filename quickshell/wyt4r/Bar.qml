@@ -2,6 +2,7 @@ pragma ComponentBehavior: Bound
 
 import Quickshell
 import QtQuick
+import QtQuick.Layouts
 
 PanelWindow {
     id: bar
@@ -10,11 +11,33 @@ PanelWindow {
     property real volumeRef
     property real brightnessRef
     property var workspacesRef
+    property var batteryRef
+    property string networkRef
+
+    function getBatteryIcon() {
+        let battery = Math.round(bar.batteryRef.energy / bar.batteryRef.energyCapacity * 100);
+
+        if (bar.batteryRef.isCharging) {
+            return "󰂄";
+        } else if (battery > 80) {
+            return "󰁹";
+        } else if (battery > 60) {
+            return "󰂁";
+        } else if (battery > 40) {
+            return "󰁾";
+        } else if (battery > 20) {
+            return "󰁼";
+        } else {
+            return "󰂎";
+        }
+    }
 
     function getVolumeIcon() {
-        if (Math.round(volumeRef * 100) > 80) {
-            return " ";
-        } else if (Math.round(volumeRef * 100) > 40) {
+        let volume = Math.round(volumeRef * 100);
+
+        if (volume > 80) {
+            return "";
+        } else if (volume > 40) {
             return "";
         } else {
             return "";
@@ -42,22 +65,46 @@ PanelWindow {
     implicitWidth: 800
     color: "#ffffff"
 
-    Row {
+    RowLayout {
         anchors.left: parent.left
         anchors.verticalCenter: parent.verticalCenter
         anchors.leftMargin: 10
-        spacing: 5
 
         Text {
-            text: Qt.formatDateTime(bar.clockRef.date, "hh:mm")
+            text: "[ "
             color: "#000000"
+            font.family: "JetBrainsMono Nerd Font"
+            font.pixelSize: 16
+            font.weight: 900
+        }
+
+        Text {
+            text: Qt.formatDateTime(bar.clockRef.date, "hh:mm / MMM dd")
+            color: "#000000"
+            font.family: "JetBrainsMono Nerd Font"
             font.pixelSize: 14
+            font.weight: 900
+        }
+
+        Text {
+            text: " ]"
+            color: "#000000"
+            font.family: "JetBrainsMono Nerd Font"
+            font.pixelSize: 16
+            font.weight: 900
         }
     }
 
-    Row {
+    RowLayout {
         anchors.centerIn: parent
-        spacing: 5
+
+        Text {
+            text: "[ "
+            color: "#000000"
+            font.family: "JetBrainsMono Nerd Font"
+            font.pixelSize: 16
+            font.weight: 900
+        }
 
         Repeater {
             model: Workspaces.names
@@ -66,8 +113,8 @@ PanelWindow {
                 required property int index
                 required property string modelData
 
-                width: 15
-                height: 15
+                width: 13
+                height: 13
                 color: index === Workspaces.current ? "#ffffff" : "#000000"
                 border.color: "#000000"
                 border.width: index === Workspaces.current ? 1 : 0
@@ -79,24 +126,79 @@ PanelWindow {
                 }
             }
         }
+
+        Text {
+            text: " ]"
+            color: "#000000"
+            font.family: "JetBrainsMono Nerd Font"
+            font.pixelSize: 16
+            font.weight: 900
+        }
     }
 
-    Row {
+    RowLayout {
         anchors.right: parent.right
         anchors.verticalCenter: parent.verticalCenter
         anchors.rightMargin: 10
-        spacing: 5
 
         Text {
-            text: bar.getBrightnessIcon()
+            text: "[ "
             color: "#000000"
             font.family: "JetBrainsMono Nerd Font"
-            font.pixelSize: 18
+            font.pixelSize: 16
             font.weight: 900
         }
 
+        Row {
+            spacing: 10
+
+            Text {
+                text: bar.getBrightnessIcon()
+                color: "#000000"
+                font.family: "JetBrainsMono Nerd Font"
+                font.pixelSize: 15
+                font.weight: 900
+            }
+
+            Text {
+                text: bar.networkRef
+                color: "#000000"
+                font.family: "JetBrainsMono Nerd Font"
+                font.pixelSize: 15
+                font.weight: 900
+            }
+
+            Text {
+                text: Volume.muted ? "" : bar.getVolumeIcon()
+                color: "#000000"
+                font.family: "JetBrainsMono Nerd Font"
+                font.pixelSize: 15
+                font.weight: 900
+
+                HoverHandler {
+                    id: volumeHoverHandler
+                    cursorShape: Qt.PointingHandCursor
+                }
+
+                TapHandler {
+                    id: volumeTapHandler
+                    onTapped: {
+                        Volume.muted = !Volume.muted;
+                    }
+                }
+            }
+
+            Text {
+                text: bar.getBatteryIcon()
+                color: "#000000"
+                font.family: "JetBrainsMono Nerd Font"
+                font.pixelSize: 15
+                font.weight: 900
+            }
+        }
+
         Text {
-            text: Volume.muted ? "" : bar.getVolumeIcon()
+            text: " ]"
             color: "#000000"
             font.family: "JetBrainsMono Nerd Font"
             font.pixelSize: 16

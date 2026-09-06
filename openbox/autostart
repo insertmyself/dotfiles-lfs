@@ -15,7 +15,14 @@
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
-picom --config $HOME/.config/picom/picom.conf -b
-feh --no-fehbg --bg-scale $HOME/Pictures/Wallpapers/wcandid.png
-qs -c wyt4r
-$HOME/.local/share/bin/pipewire-launcher.sh
+$HOME/.local/share/bin/pipewire-launcher.sh &
+brightnessctl set 100%
+picom --config $HOME/.config/picom/picom.conf -b &
+feh --no-fehbg --bg-scale $HOME/Pictures/Wallpapers/wcandid.png &
+mpd $HOME/.config/mpd/mpd.conf &
+
+until wpctl status >/dev/null 2>&1; do
+    sleep 0.5
+done
+
+qs -c wyt4r &
