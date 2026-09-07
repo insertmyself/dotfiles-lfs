@@ -69,9 +69,10 @@ PanelWindow {
         anchors.left: parent.left
         anchors.verticalCenter: parent.verticalCenter
         anchors.leftMargin: 10
+        spacing: 10
 
         Text {
-            text: "[ "
+            text: "["
             color: "#000000"
             font.family: "JetBrainsMono Nerd Font"
             font.pixelSize: 16
@@ -79,7 +80,7 @@ PanelWindow {
         }
 
         Text {
-            text: Qt.formatDateTime(bar.clockRef.date, "hh:mm / MMM dd")
+            text: Qt.formatDateTime(bar.clockRef.date, "hh:mm | dd/\MM/yy")
             color: "#000000"
             font.family: "JetBrainsMono Nerd Font"
             font.pixelSize: 14
@@ -87,7 +88,7 @@ PanelWindow {
         }
 
         Text {
-            text: " ]"
+            text: "]"
             color: "#000000"
             font.family: "JetBrainsMono Nerd Font"
             font.pixelSize: 16
@@ -97,38 +98,43 @@ PanelWindow {
 
     RowLayout {
         anchors.centerIn: parent
+        spacing: 12
 
         Text {
-            text: "[ "
+            text: "["
             color: "#000000"
             font.family: "JetBrainsMono Nerd Font"
             font.pixelSize: 16
             font.weight: 900
         }
 
-        Repeater {
-            model: Workspaces.names
-            delegate: Rectangle {
-                id: model
-                required property int index
-                required property string modelData
+        Row {
+            spacing: 8
 
-                width: 13
-                height: 13
-                color: index === Workspaces.current ? "#ffffff" : "#000000"
-                border.color: "#000000"
-                border.width: index === Workspaces.current ? 1 : 0
+            Repeater {
+                model: Workspaces.names
+                delegate: Rectangle {
+                    id: model
+                    required property int index
+                    required property string modelData
 
-                MouseArea {
-                    anchors.fill: parent
-                    cursorShape: Qt.PointingHandCursor
-                    onClicked: Workspaces.switchTo(model.index)
+                    width: 12
+                    height: 12
+                    color: index === Workspaces.current ? "#ffffff" : "#000000"
+                    border.color: "#000000"
+                    border.width: index === Workspaces.current ? 1 : 0
+
+                    MouseArea {
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: Workspaces.switchTo(model.index)
+                    }
                 }
             }
         }
 
         Text {
-            text: " ]"
+            text: "]"
             color: "#000000"
             font.family: "JetBrainsMono Nerd Font"
             font.pixelSize: 16
@@ -140,9 +146,10 @@ PanelWindow {
         anchors.right: parent.right
         anchors.verticalCenter: parent.verticalCenter
         anchors.rightMargin: 10
+        spacing: 12
 
         Text {
-            text: "[ "
+            text: "["
             color: "#000000"
             font.family: "JetBrainsMono Nerd Font"
             font.pixelSize: 16
@@ -198,7 +205,7 @@ PanelWindow {
         }
 
         Text {
-            text: " ]"
+            text: "]"
             color: "#000000"
             font.family: "JetBrainsMono Nerd Font"
             font.pixelSize: 16

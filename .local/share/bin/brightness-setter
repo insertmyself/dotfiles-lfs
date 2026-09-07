@@ -1,0 +1,19 @@
+#!/bin/sh
+# Begin brightness-setter
+
+STEP=10
+
+case "$1" in
+  inc)
+    brightnessctl set ${STEP}%+ && brightnessctl -m | cut -d, -f4 | tr -d '%' > $HOME/.local/share/brighness-value
+    ;;
+  dec)
+    brightnessctl set ${STEP}%- && brightnessctl -m | cut -d, -f4 | tr -d '%' > $HOME/.local/share/brighness-value
+    ;;
+  *)
+    echo "Usage: brightness-setter {inc|dec}"
+    exit 1
+    ;;
+esac
+
+# End brightness-setter

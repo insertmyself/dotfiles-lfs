@@ -4,8 +4,8 @@
   "logo": {
     "source": "$HOME/.config/fastfetch/maid.png",
     "type": "kitty-direct",
-    "height": 16,
-    "width": 38,
+    "height": 12,
+    "width": 28,
     "padding": {
       "top": 1,
       "left": 2,
@@ -17,67 +17,55 @@
     "break",
     {
       "type": "host",
-      "key": "   ",
+      "key": "dev",
       "format": "{version}",
       "keyColor": "white"
     },
     {
-      "type": "display",
-      "key": "  󰍹 ",
-      "format": "{width}x{height} [{refresh-rate}hz]",
-      "keyColor": "white"
-    },
-    {
       "type": "cpu",
-      "key": "   ",
+      "key": "cpu",
       "format": "{name}",
       "keyColor": "white"
     },
     {
       "type": "gpu",
-      "key": "   ",
+      "key": "gpu",
       "format": "{vendor} {name}",
       "keyColor": "white"
     },
     {
       "type": "initsystem",
-      "key": "  󰈏 ",
-      "format": "Sysvinit 3.14 on {exe}",
+      "key": "sys",
+      "format": "sysvinit 3.14 on {exe}",
       "keyColor": "white"
     },
     {
       "type": "memory",
-      "key": "   ",
-      "format": "{used} / {total} [{percentage}]",
+      "key": "mem",
+      "format": "{used} / {total}",
       "keyColor": "white"
     },
     {
-      "type": "disk",
-      "key": "   ",
-      "format": "{size-used} / {size-total} [{filesystem} on {mountpoint}]",
+      "type": "uptime",
+      "key": "upt",
+      "format": "{hours} hrs {minutes} min",
       "keyColor": "white"
     },
     {
       "type": "os",
-      "key": "   ",
-      "format": "{name} [{arch}]",
-      "keyColor": "white"
-    },
-    {
-      "type": "battery",
-      "key": "   ",
-      "format": "{status} [{cycle-count} cycle]",
+      "key": "opr",
+      "format": "{name}",
       "keyColor": "white"
     },
     {
       "type": "wm",
-      "key": "   ",
-      "format": "{pretty-name} {version} [{protocol-name}]",
+      "key": "wmn",
+      "format": "{pretty-name} {version}",
       "keyColor": "white"
     },
     {
       "type": "terminal",
-      "key": "   ",
+      "key": "trm",
       "format": "{pretty-name} {version}",
       "keyColor": "white"
     },
