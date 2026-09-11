@@ -9,7 +9,7 @@
     "padding": {
       "top": 1,
       "left": 2,
-      "right": 2,
+      "right": 0,
       "bottom": 0
     }
   },
@@ -17,55 +17,55 @@
     "break",
     {
       "type": "host",
-      "key": "dev",
+      "key": "  dev",
       "format": "{version}",
       "keyColor": "white"
     },
     {
       "type": "cpu",
-      "key": "cpu",
+      "key": "  cpu",
       "format": "{name}",
       "keyColor": "white"
     },
     {
       "type": "gpu",
-      "key": "gpu",
+      "key": "  gpu",
       "format": "{vendor} {name}",
       "keyColor": "white"
     },
     {
       "type": "initsystem",
-      "key": "sys",
+      "key": "  sys",
       "format": "sysvinit 3.14 on {exe}",
       "keyColor": "white"
     },
     {
       "type": "memory",
-      "key": "mem",
+      "key": "  mem",
       "format": "{used} / {total}",
       "keyColor": "white"
     },
     {
       "type": "uptime",
-      "key": "upt",
+      "key": "  upt",
       "format": "{hours} hrs {minutes} min",
       "keyColor": "white"
     },
     {
       "type": "os",
-      "key": "opr",
+      "key": "  opr",
       "format": "{name}",
       "keyColor": "white"
     },
     {
       "type": "wm",
-      "key": "wmn",
+      "key": "  wmn",
       "format": "{pretty-name} {version}",
       "keyColor": "white"
     },
     {
       "type": "terminal",
-      "key": "trm",
+      "key": "  trm",
       "format": "{pretty-name} {version}",
       "keyColor": "white"
     },

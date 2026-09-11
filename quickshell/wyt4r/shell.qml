@@ -20,6 +20,7 @@ ShellRoot {
             workspacesRef: Workspaces.names
             networkRef: Network.value
             batteryRef: Power.battery
+            mprisRef: Mpris.player
         }
     }
 }

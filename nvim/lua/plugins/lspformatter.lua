@@ -99,6 +99,15 @@ return {
           provideFormatter = true,
         },
       }
+      vim.lsp.config["arduino_language_server"] = {
+        cmd = {
+          "arduino-language-server",
+          "-cli", "arduino-cli",
+          "-cli-config", "/home/wetar/.arduino15/arduino-cli.yaml",
+          "-fqbn", "arduino:avr:uno"
+        }
+      }
+      vim.lsp.enable("arduino_language_server")
       vim.lsp.enable("html")
       vim.lsp.enable("clangd")
       vim.lsp.enable("jsonls")
