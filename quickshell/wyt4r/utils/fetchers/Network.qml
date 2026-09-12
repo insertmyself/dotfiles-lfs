@@ -7,7 +7,7 @@ import QtQuick
 Singleton {
     id: root
     readonly property var activeDevice: Networking.devices.values.find(device => device.connected)
-    readonly property string value: {
+    readonly property string icon: {
         if (Networking.backend !== NetworkBackendType.NetworkManager) {
             return "󰤭";
         }

@@ -7,16 +7,11 @@ Rectangle {
     property real shadowOffsetX
     property real shadowOffsetY
     property color barColor
-    property color shadowColor: Qt.darker(barColor, 1.6)
+    property color shadowColor: Qt.darker(barColor, 2.2)
 
     x: shadowOffsetX
     y: shadowOffsetY
     width: shadowWidth
     height: shadowHeight
     color: shadowColor
-
-    Component.onCompleted: {
-        console.log("barColor:", barColor);
-        console.log("shadowColor:", shadowColor);
-    }
 }
