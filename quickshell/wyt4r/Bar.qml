@@ -2,7 +2,6 @@ pragma ComponentBehavior: Bound
 
 import Quickshell
 import QtQuick
-import QtQuick.Layouts
 
 PanelWindow {
     id: bar
@@ -22,7 +21,7 @@ PanelWindow {
     anchors.bottom: true
     margins.bottom: 14
     implicitHeight: 32 + shadowSize
-    implicitWidth: 1200 + shadowSize
+    implicitWidth: 1350 + shadowSize
     color: "transparent"
 
     SystemClock {
