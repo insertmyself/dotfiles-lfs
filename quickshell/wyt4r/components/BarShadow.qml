@@ -7,7 +7,7 @@ Rectangle {
     property real shadowOffsetX
     property real shadowOffsetY
     property color barColor
-    property color shadowColor: Qt.darker(barColor, 2.2)
+    property color shadowColor: barColor
 
     x: shadowOffsetX
     y: shadowOffsetY

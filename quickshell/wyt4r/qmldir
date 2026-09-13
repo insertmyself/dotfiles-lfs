@@ -4,6 +4,7 @@ singleton Brightness 1.0 utils/fetchers/Brightness.qml
 singleton Power 1.0 utils/fetchers/Power.qml
 singleton Network 1.0 utils/fetchers/Network.qml
 singleton Cava 1.0 utils/fetchers/Cava.qml
+singleton Mpris 1.0 utils/fetchers/Mpris.qml
 
 Bar 1.0 Bar.qml
 BarShadow 1.0 components/BarShadow.qml
@@ -11,3 +12,4 @@ ClockWidget 1.0 widgets/ClockWidget.qml
 WorkspacesWidget 1.0 widgets/WorkspacesWidget.qml
 CavaWidget 1.0 widgets/CavaWidget.qml
 SystemWidget 1.0 widgets/SystemWidget.qml
+MusicWidget 1.0 widgets/MusicWidget.qml

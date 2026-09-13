@@ -7,7 +7,11 @@ Singleton {
     id: root
 
     function getBatteryIcon(batteryRef) {
-        let battery = Math.round(batteryRef.energy / batteryRef.energyCapacity * 100);
+        if (!batteryRef.battery.ready) {
+            return "";
+        }
+
+        let battery = Math.round(batteryRef.battery.percentage * 100);
 
         if (batteryRef.isCharging) {
             return "󰂄";

@@ -51,6 +51,17 @@ PanelWindow {
         anchors.leftMargin: 6
     }
 
+    MusicWidget {
+        id: musicWidget
+        barColor: bar.barColor
+        shadowSize: bar.shadowSize
+        mprisRef: Mpris
+
+        anchors.left: workspacesWidget.right
+        anchors.verticalCenter: workspacesWidget.verticalCenter
+        anchors.leftMargin: 6
+    }
+
     CavaWidget {
         id: cavaWidget
         barColor: bar.barColor
