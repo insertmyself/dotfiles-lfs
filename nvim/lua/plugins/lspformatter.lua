@@ -33,10 +33,12 @@ return {
           python = { "black" },
           rust = { "rustfmt" },
         },
-        format_on_save = {
-          timeout_ms = 500,
-          lsp_format = "fallback",
-        },
+        format_on_save = function(bufnr)
+          if vim.bo[bufnr].filetype == "arduino" then
+            return nil
+          end
+          return { timeout_ms = 500, lsp_format = "fallback" }
+        end,
         notify_on_error = true,
       })
 
@@ -71,6 +73,12 @@ return {
       "saghen/blink.cmp",
     },
     config = function()
+      local arduino_caps = vim.lsp.protocol.make_client_capabilities()
+      arduino_caps.textDocument.completion.completionItem.insertReplaceSupport = false
+      arduino_caps.workspace = arduino_caps.workspace or {}
+      arduino_caps.workspace.semanticTokens = nil
+      arduino_caps.textDocument.semanticTokens = nil
+
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("ols")
       vim.lsp.enable("eslint")
@@ -98,12 +106,14 @@ return {
           provideFormatter = true,
         },
       }
+
       vim.lsp.config["arduino_language_server"] = {
         filetypes = { "arduino" },
+        capabilities = arduino_caps,
         cmd = {
           "arduino-language-server",
           "-cli", "arduino-cli",
-          "-cli-config", "/home/wetar/.arduino15/arduino-cli.yaml",
+          "-cli-config", vim.fn.expand("$HOME/.arduino15/arduino-cli.yaml"),
           "-fqbn", "esp32:esp32:esp32",
           "-clangd", vim.fn.stdpath("data") .. "/mason/bin/clangd",
         }
@@ -122,12 +132,23 @@ return {
       vim.lsp.enable("qmlls")
       vim.lsp.enable("gopls")
       vim.lsp.enable("tailwindcss")
+
       vim.keymap.set(
         { "n", "v" },
         "<leader>ca",
         vim.lsp.buf.code_action,
         { silent = true, desc = "Show code action from configured LSP" }
       )
+
+      vim.api.nvim_create_user_command("LspRestart", function()
+        local clients = vim.lsp.get_clients({ bufnr = 0 })
+        for _, client in ipairs(clients) do
+          vim.lsp.stop_client(client.id, true)
+        end
+        vim.defer_fn(function()
+          vim.cmd("edit")
+        end, 500)
+      end, {})
     end,
   },
 }
