@@ -21,7 +21,7 @@ Singleton {
                     return;
                 }
 
-                const values = line.trim().split(";").filter(s => s.length > 0).map(Number);
+                const values = line.trim().split(";").filter(data => data.length > 0).map(Number);
 
                 if (values.length > 0) {
                     root.bars = values;

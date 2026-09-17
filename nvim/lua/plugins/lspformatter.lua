@@ -38,11 +38,11 @@ return {
           lsp_format = "fallback",
         },
         notify_on_error = true,
-
-        vim.keymap.set("n", "<leader>fm", function()
-          require("conform").format()
-        end, { silent = true, desc = "Format current document" }),
       })
+
+      vim.keymap.set("n", "<leader>fm", function()
+        require("conform").format()
+      end, { silent = true, desc = "Format current document" })
     end,
   },
   {
@@ -86,7 +86,6 @@ return {
           },
         },
       }
-
       vim.lsp.enable("emmet_language_server")
       vim.lsp.config["html"] = {
         filetypes = { "html", "php", "blade", "htm" },
@@ -100,13 +99,16 @@ return {
         },
       }
       vim.lsp.config["arduino_language_server"] = {
+        filetypes = { "arduino" },
         cmd = {
           "arduino-language-server",
           "-cli", "arduino-cli",
           "-cli-config", "/home/wetar/.arduino15/arduino-cli.yaml",
-          "-fqbn", "arduino:avr:uno"
+          "-fqbn", "esp32:esp32:esp32",
+          "-clangd", vim.fn.stdpath("data") .. "/mason/bin/clangd",
         }
       }
+      vim.lsp.enable("arduino_language_server")
       vim.lsp.enable("arduino_language_server")
       vim.lsp.enable("html")
       vim.lsp.enable("clangd")

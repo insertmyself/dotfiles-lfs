@@ -7,7 +7,7 @@ Singleton {
     id: root
     property MprisPlayer player: {
         for (const player of Mpris.players.values) {
-            if (player.playbackState === MprisPlaybackState.Playing && isSpotify(player)) {
+            if (isSpotify(player)) {
                 return player;
             }
         }

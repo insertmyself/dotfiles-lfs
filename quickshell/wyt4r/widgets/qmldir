@@ -3,3 +3,4 @@ WorkspacesWidget 1.0 WorkspacesWidget.qml
 CavaWidget 1.0 CavaWidget.qml
 SystemWidget 1.0 SystemWidget.qml
 MusicWidget 1.0 MusicWidget.qml
+PowerWidget 1.0 PowerWidget.qml

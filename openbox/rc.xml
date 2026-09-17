@@ -683,8 +683,8 @@
 </menu>
 
 <applications>
-    <application title="openbox">
-        <border>yes</border>
+    <application name="*" class="*">
+      <decor>no</decor>
     </application>
 </applications>
 

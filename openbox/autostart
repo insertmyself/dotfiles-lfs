@@ -18,7 +18,7 @@
 $HOME/.local/share/bin/pipewire-launcher &
 brightnessctl set $(cat $HOME/.local/share/brighness-value)%
 picom --config $HOME/.config/picom/picom.conf -b &
-feh --no-fehbg --bg-scale $HOME/Pictures/Wallpapers/learn.png &
+feh --no-fehbg --bg-scale $HOME/Pictures/Wallpapers/girl.png &
 mpd $HOME/.config/mpd/mpd.conf &
 
 until wpctl status >/dev/null 2>&1; do

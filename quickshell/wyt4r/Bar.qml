@@ -5,24 +5,40 @@ import QtQuick
 
 PanelWindow {
     id: bar
-    required property var modelData
-    property SystemClock clockRef
-    property var volumeRef
-    property var brightnessRef
-    property var workspacesRef
-    property var batteryRef
-    property var cavaRef
-    property var networkRef
     property real shadowSize: 6
     property color barColor: "#ffffff"
 
     aboveWindows: false
-    screen: modelData
-    anchors.bottom: true
-    margins.bottom: 14
+    anchors.top: true
+    margins.top: 14
     implicitHeight: 32 + shadowSize
     implicitWidth: 1350 + shadowSize
     color: "transparent"
+    mask: Region {
+        Region {
+            item: clockWidget
+        }
+
+        Region {
+            item: workspacesWidget
+        }
+
+        Region {
+            item: musicWidget
+        }
+
+        Region {
+            item: cavaWidget
+        }
+
+        Region {
+            item: systemWidget
+        }
+
+        Region {
+            item: powerWidget
+        }
+    }
 
     SystemClock {
         id: clockSource
@@ -81,6 +97,16 @@ PanelWindow {
         batteryRef: Power
         brightnessRef: Brightness
         networkRef: Network
+
+        anchors.right: powerWidget.left
+        anchors.verticalCenter: powerWidget.verticalCenter
+        anchors.rightMargin: 6
+    }
+
+    PowerWidget {
+        id: powerWidget
+        barColor: bar.barColor
+        shadowSize: bar.shadowSize
 
         anchors.right: parent.right
         anchors.verticalCenter: parent.verticalCenter

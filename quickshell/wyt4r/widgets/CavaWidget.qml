@@ -10,8 +10,8 @@ Item {
     property color barColor
     property var cavaRef
 
-    width: cavaText.implicitWidth + 16 + cavaWidget.shadowSize
-    height: cavaText.implicitHeight + 8 + cavaWidget.shadowSize
+    width: cavaContent.implicitWidth + 16 + cavaWidget.shadowSize
+    height: cavaContent.implicitHeight + 8 + cavaWidget.shadowSize
 
     BarShadow {
         id: cavaShadow
@@ -30,7 +30,7 @@ Item {
     }
 
     RowLayout {
-        id: cavaText
+        id: cavaContent
         anchors.centerIn: cavaBg
         spacing: 6
 

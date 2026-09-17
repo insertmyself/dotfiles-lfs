@@ -15,8 +15,8 @@ Item {
     property var brightnessRef
     property var volumeRef
 
-    width: systemText.implicitWidth + 16 + shadowSize
-    height: systemText.implicitHeight + 8 + shadowSize
+    width: systemContent.implicitWidth + 16 + shadowSize
+    height: systemContent.implicitHeight + 8 + shadowSize
 
     BarShadow {
         id: systemShadow
@@ -35,7 +35,7 @@ Item {
     }
 
     RowLayout {
-        id: systemText
+        id: systemContent
         anchors.centerIn: systemBg
         spacing: 10
 

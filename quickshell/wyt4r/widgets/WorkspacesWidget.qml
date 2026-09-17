@@ -10,8 +10,8 @@ Item {
     property color barColor
     property var workspacesRef
 
-    width: workspacesText.implicitWidth + 16 + shadowSize
-    height: workspacesText.implicitHeight + 8 + shadowSize
+    width: workspacesContent.implicitWidth + 16 + shadowSize
+    height: workspacesContent.implicitHeight + 8 + shadowSize
 
     BarShadow {
         id: workspacesShadow
@@ -30,7 +30,7 @@ Item {
     }
 
     RowLayout {
-        id: workspacesText
+        id: workspacesContent
         anchors.centerIn: workspacesBg
         spacing: 6
 
@@ -56,11 +56,18 @@ Item {
                         required property int index
                         required property string modelData
 
-                        width: 11
+                        width: index === workspacesWidget.workspacesRef.current ? 32 : 11
                         height: 11
                         color: index === workspacesWidget.workspacesRef.current ? "#ffffff" : "#000000"
                         border.color: "#000000"
                         border.width: index === workspacesWidget.workspacesRef.current ? 1 : 0
+
+                        Behavior on width {
+                            NumberAnimation {
+                                duration: 150
+                                easing: Easing.OutQuad
+                            }
+                        }
 
                         MouseArea {
                             anchors.fill: parent

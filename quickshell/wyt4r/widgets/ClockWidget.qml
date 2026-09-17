@@ -11,8 +11,8 @@ Item {
     property color barColor
     property SystemClock clockRef
 
-    width: clockText.implicitWidth + 16 + shadowSize
-    height: clockText.implicitHeight + 8 + shadowSize
+    width: clockContent.implicitWidth + 16 + shadowSize
+    height: clockContent.implicitHeight + 8 + shadowSize
 
     BarShadow {
         id: clockShadow
@@ -31,7 +31,7 @@ Item {
     }
 
     RowLayout {
-        id: clockText
+        id: clockContent
         anchors.centerIn: clockBg
         spacing: 10
 
