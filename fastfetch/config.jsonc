@@ -40,6 +40,12 @@
       "keyColor": "white"
     },
     {
+      "type": "kernel",
+      "key": "  krn",
+      "format": "{sysname} on {release}",
+      "keyColor": "white"
+    },
+    {
       "type": "memory",
       "key": "  mem",
       "format": "{used} / {total}",
