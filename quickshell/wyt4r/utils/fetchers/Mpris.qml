@@ -5,6 +5,7 @@ import Quickshell.Services.Mpris
 
 Singleton {
     id: root
+    property int stopped: MprisPlaybackState.Stopped
     property MprisPlayer player: {
         for (const player of Mpris.players.values) {
             if (isSpotify(player)) {

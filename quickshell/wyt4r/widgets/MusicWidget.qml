@@ -172,6 +172,8 @@ Item {
 
                 Image {
                     id: albumArt
+                    property string cachedArt: "../assets/default.png"
+
                     Layout.preferredWidth: 128
                     Layout.preferredHeight: 128
                     Layout.alignment: Qt.AlignLeft
@@ -179,16 +181,39 @@ Item {
                     sourceSize.width: 128
                     sourceSize.height: 128
                     asynchronous: true
-                    visible: source.toString() !== ""
-                    source: {
+                    source: cachedArt
+
+                    function updateArt() {
                         let player = musicWidget.mprisRef.player;
 
-                        if (!player || !musicWidget.mprisRef.isSpotify(player) || !player.trackArtUrl) {
-                            return "../assets/default.png";
+                        if (!player || !musicWidget.mprisRef.isSpotify(player)) {
+                            cachedArt = "../assets/default.png";
+                            return;
                         }
 
-                        return player.trackArtUrl;
+                        if (player.trackArtUrl) {
+                            cachedArt = player.trackArtUrl;
+                            return;
+                        }
+
+                        if (player.playbackState === musicWidget.mprisRef.stopped) {
+                            cachedArt = "../assets/default.png";
+                        }
                     }
+
+                    Connections {
+                        target: musicWidget.mprisRef.player
+                        ignoreUnknownSignals: true
+
+                        function onTrackArtUrlChanged() {
+                            albumArt.updateArt();
+                        }
+                        function onPlaybackStateChanged() {
+                            albumArt.updateArt();
+                        }
+                    }
+
+                    Component.onCompleted: updateArt()
                 }
 
                 Column {
