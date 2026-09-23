@@ -268,12 +268,12 @@
   <!-- Keybindings for screenshot -->
   <keybind key="Print">
     <action name="Execute">
-        <command>scrot -q 100 ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png</command>
+        <command>scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png</command>
     </action>
   </keybind>
   <keybind key="W-Print">
     <action name="Execute">
-        <command>scrot -s -q 100 ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png</command>
+        <command>scrot -s ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png</command>
     </action>
   </keybind>
 
